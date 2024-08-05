@@ -1,0 +1,54 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XO game</title>
+    <link rel = "stylesheet" href="xo.css">
+</head>
+<body>
+    <div id="board" style="display: none;">
+        Match:&nbsp; <div id="k3">0</div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+        X:&nbsp; <div id="k1">0</div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        O:&nbsp;<div id="k2">0</div>
+    </div>
+    <div id="radif 1" >
+        <div class="div">-</div>
+        <div class="div">-</div>
+        <div class="div">-</div>
+    </div>
+    <div id="radif 2" >
+        <div class="div">-</div>
+        <div class="div">-</div>
+        <div class="div">-</div>
+    </div>
+    <div id="radif 3" >
+        <div class="div">-</div>
+        <div class="div">-</div>
+        <div class="div">-</div>
+    </div>
+    <div id="start" class="menu">
+        <p>XO game</p>
+        <button id="play" onclick="play()">play game</button>
+    </div>
+    <span id="go" class="menu" style="display: none;"> 
+        X choose color
+    </span>
+    <div id="final" class="menu"></div>
+    <div id="finn"  class="menu" style="display: none;">
+        <p>rematch ?</p>
+        <button onclick="play()" class="end">yes</button>
+        <button onclick="end()" class="end">end</button>
+    </div>
+    <div id="clrs" style="display: none;">
+        <button class="clr" onclick="clr('red')">red</button>
+        <button class="clr" onclick="clr('blue')">blue</button>
+        <button class="clr" onclick="clr('magenta')">magenta</button>
+        <button class="clr" onclick="clr('green')">green</button>
+        <button class="clr" onclick="clr('black')">black</button>
+        <button class="clr" onclick="clr('cyan')">cyan</button>
+        <button class="clr" onclick="clr('orange')">orange</button>
+    </div>
+    <script src="./xo.js"></script>
+</body>
+</html>

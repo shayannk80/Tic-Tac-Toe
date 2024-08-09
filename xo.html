@@ -3,52 +3,67 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>XO game</title>
+    <title>Tic Tac Toe</title>
     <link rel = "stylesheet" href="xo.css">
 </head>
 <body>
-    <div id="board" style="display: none;">
-        Match:&nbsp; <div id="k3">0</div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
-        X:&nbsp; <div id="k1">0</div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        O:&nbsp;<div id="k2">0</div>
-    </div>
-    <div id="radif 1" >
-        <div class="div">-</div>
-        <div class="div">-</div>
-        <div class="div">-</div>
-    </div>
-    <div id="radif 2" >
-        <div class="div">-</div>
-        <div class="div">-</div>
-        <div class="div">-</div>
-    </div>
-    <div id="radif 3" >
-        <div class="div">-</div>
-        <div class="div">-</div>
-        <div class="div">-</div>
-    </div>
-    <div id="start" class="menu">
-        <p>XO game</p>
-        <button id="play" onclick="play()">play game</button>
-    </div>
-    <span id="go" class="menu" style="display: none;"> 
-        X choose color
-    </span>
-    <div id="final" class="menu"></div>
-    <div id="finn"  class="menu" style="display: none;">
-        <p>rematch ?</p>
-        <button onclick="play()" class="end">yes</button>
-        <button onclick="end()" class="end">end</button>
-    </div>
-    <div id="clrs" style="display: none;">
-        <button class="clr" onclick="clr('red')">red</button>
-        <button class="clr" onclick="clr('blue')">blue</button>
-        <button class="clr" onclick="clr('magenta')">magenta</button>
-        <button class="clr" onclick="clr('green')">green</button>
-        <button class="clr" onclick="clr('black')">black</button>
-        <button class="clr" onclick="clr('cyan')">cyan</button>
-        <button class="clr" onclick="clr('orange')">orange</button>
-    </div>
+    <main>
+        <div id="start-menu" class="menu">
+            <p>Tic Tac Toe</p>
+            <button id="play" class="button" onclick="play()">Play Game</button>
+        </div>
+        <div id="name-selection" class="menu" style="display: none;">
+            <p>Enter Player Names</p>
+            <input type="text" id="name1" class="input" placeholder="1st Player Name">
+            <input type="text" id="name2" class="input" placeholder="2nd Player Name">
+            <button class="button" onclick="submitNames()">Submit</button>
+        </div>
+        <div id="board" style="display: none;">
+            Match:&nbsp; <div id="match">0</div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+            <div id="player1"></div>:&nbsp; <div id="score1">0</div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <div id="player2"></div>:&nbsp;<div id="score2">0</div>
+        </div>
+        <span id="color-selection" class="menu" style="display: none;"> 
+            <div id="playername"></div> choose color
+        </span>
+        <div id="color-options" style="display: none;">
+            <button class="selectColor" onclick="selectColor('red')">Red</button>
+            <button class="selectColor" onclick="selectColor('blue')">Blue</button>
+            <button class="selectColor" onclick="selectColor('magenta')">Magenta</button>
+            <button class="selectColor" onclick="selectColor('green')">Green</button>
+            <button class="selectColor" onclick="selectColor('yellow')">Yellow</button>
+            <button class="selectColor" onclick="selectColor('cyan')">Cyan</button>
+            <button class="selectColor" onclick="selectColor('orange')">Orange</button>
+        </div>
+        <div id="go" style="display: none;"></div>
+        <div id="game-board" style="display: none;">
+            <div class="row">
+                <div class="cell" data-index="0">-</div>
+                <div class="cell" data-index="1">-</div>
+                <div class="cell" data-index="2">-</div>
+            </div>
+            <div class="row">
+                <div class="cell" data-index="3">-</div>
+                <div class="cell" data-index="4">-</div>
+                <div class="cell" data-index="5">-</div>
+            </div>
+            <div class="row">
+                <div class="cell" data-index="6">-</div>
+                <div class="cell" data-index="7">-</div>
+                <div class="cell" data-index="8">-</div>
+            </div>
+        </div>
+        <div class="menu" id="turn" style="display: none;">
+            It's<div id="playerturn"></div>turn
+        </div>
+        <div id="rematch-menu"  class="menu" style="display: none;">
+            <div id="final"></div>            
+            <p>Rematch ?</p>
+            <button onclick="play()" class="end">Yes</button>
+            <button onclick="end()" class="end">End</button>
+        </div>
+
+    </main>
     <script src="./xo.js"></script>
 </body>
 </html>
